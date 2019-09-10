@@ -15,10 +15,22 @@ import female from '../../assets/female.png';
 import male from '../../assets/male.png';
 
 export default function Main() {
+  const [malePressed, setMalePressed] = useState(0);
+  const [femalePressed, setFemalePressed] = useState(0);
+
   const [height, setHeight] = useState(170);
   const [weight, setWeight] = useState(70);
   const [age, setAge] = useState(20);
 
+  function handleMaleClick() {
+    setFemalePressed(0);
+    setMalePressed(1);
+  }
+
+  function handleFemaleClick() {
+    setMalePressed(0);
+    setFemalePressed(1);
+  }
   // flag = 0 for weight
   // flag = 1 for age
   function handlePlus(flag) {
@@ -37,14 +49,22 @@ export default function Main() {
       <Text style={styles.title}>Bmi Calculator</Text>
 
       <View style={styles.smallContainer}>
-        <View style={styles.card}>
+        <TouchableOpacity onPress={handleMaleClick} style={styles.card}>
           <Image source={male} alt="male" />
-          <Text style={styles.cardText}>Male</Text>
-        </View>
-        <View style={styles.card}>
+          <Text
+            style={malePressed == 0 ? styles.cardText : styles.cardTextClicked}>
+            Male
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={handleFemaleClick} style={styles.card}>
           <Image source={female} alt="female" />
-          <Text style={styles.cardText}>Female</Text>
-        </View>
+          <Text
+            style={
+              femalePressed == 0 ? styles.cardText : styles.cardTextClicked
+            }>
+            Female
+          </Text>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.heightContainer}>
@@ -104,6 +124,10 @@ export default function Main() {
           </View>
         </View>
       </View>
+
+      <TouchableOpacity style={styles.calculateContainer}>
+        <Text style={styles.calculateText}>Calculate</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }

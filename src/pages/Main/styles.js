@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica',
     fontSize: 18,
     textTransform: 'uppercase',
+    marginTop: 20,
   },
 
   smallContainer: {
@@ -35,6 +36,15 @@ const styles = StyleSheet.create({
     color: '#9BAEBC',
     fontFamily: 'Helvetica',
     fontSize: 18,
+    textTransform: 'uppercase',
+    marginTop: 20,
+  },
+
+  cardTextClicked: {
+    color: '#FFFFFF',
+    fontFamily: 'Helvetica',
+    fontSize: 18,
+    fontWeight: 'bold',
     textTransform: 'uppercase',
     marginTop: 20,
   },
@@ -90,6 +100,21 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#e5e5e5',
     fontSize: 24,
+  },
+
+  calculateContainer: {
+    width: 400,
+    height: 93,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#AE6997',
+  },
+
+  calculateText: {
+    fontFamily: 'Helvetica',
+    fontSize: 18,
+    lineHeight: 21,
+    color: '#E5E5E5',
   },
 });
 
