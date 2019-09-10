@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
 
   genderContainer: {
     flexDirection: 'row',
+    justifyContent: 'space-around',
   },
 
   card: {
@@ -36,6 +37,31 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textTransform: 'uppercase',
     marginTop: 20,
+  },
+
+  heightContainer: {
+    width: 342,
+    height: 155,
+    backgroundColor: 'rgba(0, 137, 186, 0.5)',
+    borderRadius: 32,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+
+  heightValue: {
+    fontFamily: 'Helvetica',
+    fontWeight: 'bold',
+    fontSize: 24,
+    lineHeight: 28,
+    letterSpacing: 0.02,
+    color: '#FFF',
+  },
+
+  heightMeasure: {
+    fontFamily: 'Helvetica',
+    fontWeight: '300',
+    fontSize: 24,
+    color: '#FFF',
   },
 });
 
