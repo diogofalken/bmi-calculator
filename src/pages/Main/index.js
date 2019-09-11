@@ -14,7 +14,7 @@ import styles from './styles';
 import female from '../../assets/female.png';
 import male from '../../assets/male.png';
 
-export default function Main() {
+export default function Main({navigation}) {
   const [malePressed, setMalePressed] = useState(0);
   const [femalePressed, setFemalePressed] = useState(0);
 
@@ -41,6 +41,12 @@ export default function Main() {
   // flag = 1 for age
   function handleMinus(flag) {
     flag === 0 ? setWeight(weight - 1) : setAge(age - 1);
+  }
+
+  function handleCalculate() {
+    const convertedHeight = height * 0.01;
+    const bmi = weight / (convertedHeight * convertedHeight);
+    navigation.navigate('Result', {bmi});
   }
 
   return (
@@ -125,7 +131,9 @@ export default function Main() {
         </View>
       </View>
 
-      <TouchableOpacity style={styles.calculateContainer}>
+      <TouchableOpacity
+        onPress={handleCalculate}
+        style={styles.calculateContainer}>
         <Text style={styles.calculateText}>Calculate</Text>
       </TouchableOpacity>
     </SafeAreaView>
