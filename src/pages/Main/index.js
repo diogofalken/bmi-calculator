@@ -15,7 +15,7 @@ import female from '../../assets/female.png';
 import male from '../../assets/male.png';
 
 export default function Main({navigation}) {
-  const [malePressed, setMalePressed] = useState(0);
+  const [malePressed, setMalePressed] = useState(1);
   const [femalePressed, setFemalePressed] = useState(0);
 
   const [height, setHeight] = useState(170);
@@ -46,7 +46,13 @@ export default function Main({navigation}) {
   function handleCalculate() {
     const convertedHeight = height * 0.01;
     const bmi = weight / (convertedHeight * convertedHeight);
-    navigation.navigate('Result', {bmi});
+
+    const gender = 0;
+    if (femalePressed) {
+      gender = 1;
+    }
+
+    navigation.navigate('Result', {bmi, age, gender});
   }
 
   return (
