@@ -1,11 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {
-  View,
-  SafeAreaView,
-  Text,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
+import {View, SafeAreaView, Text, TouchableOpacity} from 'react-native';
 
 import styles from './styles';
 
@@ -59,8 +53,6 @@ export default function Result({navigation}) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" />
-
       <Text style={styles.title}>Result</Text>
       <View style={styles.mainCard}>
         <Text style={styles.resultTitle}>{resultTitle}</Text>

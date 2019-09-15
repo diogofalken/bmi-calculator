@@ -1,13 +1,6 @@
 import React, {useState} from 'react';
 import Slider from '@react-native-community/slider';
-import {
-  View,
-  SafeAreaView,
-  Text,
-  StatusBar,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {View, SafeAreaView, Text, Image, TouchableOpacity} from 'react-native';
 
 import styles from './styles';
 
@@ -57,7 +50,6 @@ export default function Main({navigation}) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" />
       <Text style={styles.title}>Bmi Calculator</Text>
 
       <View style={styles.smallContainer}>
